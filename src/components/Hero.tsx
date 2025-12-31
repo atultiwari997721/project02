@@ -48,7 +48,7 @@ export default function Hero() {
         </div>
 
         {/* Right Content Area (Span 8-9) */}
-        <div className="lg:col-span-8 flex flex-col justify-center lg:pl-4">
+        <div className="lg:col-span-8 flex flex-col justify-center items-center text-center lg:items-start lg:text-left lg:pl-4">
             
             {/* Top Badge */}
              <div className="mb-6 animate-fade-in-up">
@@ -58,19 +58,19 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-6xl md:text-[5.5rem] font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight font-syne">
+            <h1 className="text-4xl md:text-[5.5rem] font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight font-syne">
                 I'm Raghvendra <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600">
                     Bhati.
                 </span>
             </h1>
             
-            <p className="text-slate-500 text-xl font-medium mb-10 max-w-2xl leading-relaxed">
+            <p className="text-slate-500 text-lg md:text-xl font-medium mb-10 max-w-2xl leading-relaxed">
                 Data Science Student at <strong className="text-slate-800">IPS Academy</strong> and <strong className="text-slate-800">E-Cell IIT Bombay</strong> Leader. Crafting digital experiences with data & design.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap gap-4 items-center">
+            <div className="flex flex-wrap gap-4 items-center justify-center lg:justify-start">
                 <a href="#projects" className="group px-8 py-4 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-3">
                     My Works <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </a>
@@ -80,7 +80,7 @@ export default function Hero() {
             </div>
 
             {/* Stats / Footer of Hero */}
-            <div className="mt-20 flex gap-16 border-t border-slate-200 pt-8 max-w-lg">
+            <div className="mt-20 flex gap-8 md:gap-16 border-t border-slate-200 pt-8 max-w-lg justify-center lg:justify-start w-full">
                 <Stat number="2+" label="Years Exp." />
                 <Stat number="50+" label="Projects" />
                 <Stat number="24/7" label="Commitment" />
@@ -95,7 +95,7 @@ export default function Hero() {
 
 function SocialBtn({ icon, href }: { icon: React.ReactNode, href: string }) {
     return (
-        <a href={href} target="_blank" className="p-3 bg-white rounded-2xl shadow-sm hover:shadow-md hover:scale-110 hover:text-violet-600 transition-all border border-slate-100 text-slate-400">
+        <a href={href} target="_blank" className="p-3 bg-white rounded-2xl shadow-sm hover:shadow-md hover:scale-110 hover:text-violet-600 transition-all border border-slate-100 text-violet-600 md:text-slate-400">
             {icon}
         </a>
     )
