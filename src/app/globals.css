@@ -7,6 +7,10 @@
 }
 
 /* Custom Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-syne);
   background-color: #E6EBF4;

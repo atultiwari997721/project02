@@ -32,7 +32,7 @@ export default function ParticleWave() {
             const x = positions[i * 3];
             const z = positions[i * 3 + 2];
             // Y = sin(x + time) + cos(z + time)
-            positions[i * 3 + 1] = Math.sin(x + time * 0.5) * 0.5 + Math.cos(z + time * 0.3) * 0.5;
+            positions[i * 3 + 1] = Math.sin(x + time * 0.3) * 0.5 + Math.cos(z + time * 0.2) * 0.5;
         }
         mesh.current.geometry.attributes.position.needsUpdate = true;
     }
@@ -47,11 +47,11 @@ export default function ParticleWave() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.05}
+        size={0.03}
         color="#8b5cf6" // Violet/Purple color
         sizeAttenuation={true}
         transparent
-        opacity={0.8}
+        opacity={0.5}
       />
     </points>
   );
