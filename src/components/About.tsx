@@ -7,7 +7,7 @@ import PopIn from "@/components/anim/PopIn";
 
 export default function About() {
   return (
-    <section id="about" className="pt-10 pb-0 md:py-20 relative z-10 px-0 md:px-6">
+    <section id="about" className="pt-10 pb-0 md:py-20 relative z-10 px-6 md:px-6">
       <div className="max-w-6xl mx-auto">
         <PopIn>
         {/* Stats Row - Updated to match user request */}
@@ -36,7 +36,7 @@ export default function About() {
                 {/* Left Column: Bio Text */}
                 <div className="lg:col-span-2 space-y-6 md:space-y-8">
                     <h2 className="text-sm font-bold text-violet-600 dark:text-violet-400 uppercase tracking-widest mb-4">Biography</h2>
-                    <div className="space-y-6 text-slate-700 dark:text-slate-300 text-base md:text-lg leading-relaxed font-medium text-left md:text-justify hyphens-auto">
+                    <div className="space-y-6 text-slate-700 dark:text-slate-300 text-base md:text-lg leading-relaxed font-medium text-justify hyphens-auto">
                         <p>
                             Being an <span className="text-slate-900 dark:text-white font-bold">Undergrad Student</span> at <span className="text-slate-900 dark:text-white">Medicaps University</span>, I am currently exploring the field of <span className="text-slate-900 dark:text-white">Data Science</span> and <span className="text-slate-900 dark:text-white">Artificial Intelligence</span>.
                         </p> 

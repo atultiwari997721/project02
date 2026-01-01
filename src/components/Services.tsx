@@ -27,7 +27,7 @@ const services = [
     tags: ["Training Data", "ML Algorithms"],
     description:
       "I develop innovative solutions, optimize model performance, and drive impactful data-driven insights.",
-    image: "/assets/service_ml_hand.png",
+    image: "/assets/service_ml_hand_v2.png",
     color: "from-pink-500/20 to-rose-500/5",
     border: "group-hover:border-pink-500/50"
   },
@@ -36,7 +36,7 @@ const services = [
     tags: ["Logo Design", "Style Guides"],
     description:
       "Design and optimize prompts to enhance AI model performance and deliver precise, actionable results.",
-    image: "/assets/service_robot_face.png",
+    image: "/assets/service_robot_face_v2.png",
     color: "from-cyan-500/20 to-sky-500/5",
     border: "group-hover:border-cyan-500/50"
   },
@@ -98,17 +98,15 @@ export default function Services() {
               </div>
 
               {/* Bottom Image / Illustration area */}
-              <div className="relative w-full aspect-[4/3] mt-4 rounded-3xl overflow-hidden border border-black/5 dark:border-white/5 bg-black/5 dark:bg-black/20"> {/* Changed aspect ratio */}
-                  <div className="absolute -bottom-4 right-0 w-[90%] h-[90%] transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500"> {/* Added wrapper div for animation */}
-                      <Image 
-                         src={service.image} 
-                         alt={service.title}
-                         fill
-                         className="object-contain" // Changed to contain to show full cropped asset
-                      />
-                  </div>
+              <div className="relative w-full aspect-[4/3] mt-4 rounded-3xl overflow-hidden border border-black/5 dark:border-white/5 bg-black/5 dark:bg-black/20"> 
+                  <Image 
+                      src={service.image} 
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110" 
+                  />
                    {/* Overlay for depth */}
-                   <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent dark:from-[#0a0a0d] dark:via-transparent dark:to-transparent opacity-80"></div>
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
               </div>
             </motion.div>
           ))}

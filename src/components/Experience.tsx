@@ -54,7 +54,7 @@ const workExperience = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-10 md:py-20 relative z-10 px-2 md:px-6">
+    <section id="experience" className="py-10 md:py-20 relative z-10 px-6 md:px-6">
       <div className="max-w-6xl mx-auto">
         <PopIn>
         {/* Header Section */}

@@ -4,8 +4,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-syne: "Syne", sans-serif;
-  --font-sans: var(--font-syne);
+  --font-syne: var(--font-syne);
+  --font-sans: var(--font-sans);
 }
 
 /* Custom Base Styles */
@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  font-family: var(--font-syne);
+  font-family: var(--font-sans);
   background-color: #0a0a0d;
   color: #cccccc;
   -webkit-font-smoothing: antialiased;
