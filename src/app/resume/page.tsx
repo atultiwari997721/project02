@@ -36,17 +36,43 @@ export default function ResumePage() {
         {/* Education */}
         <section className="mb-8">
           <h2 className="text-xl font-bold uppercase tracking-widest border-b border-slate-300 pb-2 mb-4 text-violet-700">Education</h2>
-          <div className="flex justify-between items-start mb-2">
-            <h3 className="font-bold text-lg">Institute Of Engineering & Science, IPS Academy, Indore</h3>
-            <span className="font-bold text-slate-500 text-sm whitespace-nowrap">NOV’23 – APR’27</span>
+          
+          {/* B.Tech */}
+          <div className="mb-4">
+            <div className="flex justify-between items-start mb-1">
+              <h3 className="font-bold text-lg">IES IPS Academy, Indore</h3>
+              <span className="font-bold text-slate-500 text-sm whitespace-nowrap">2023 – 2027</span>
+            </div>
+            <div className="flex justify-between items-center">
+               <p className="font-semibold italic text-slate-800">Bachelor of Technology – CSE (Data Science)</p>
+               <span className="font-bold bg-slate-100 px-2 py-1 rounded text-xs">CGPA: 7.6</span>
+            </div>
           </div>
-          <div className="flex justify-between items-center mb-2">
-            <p className="font-semibold italic">Bachelor of Technology – CSE - Data Science</p>
-            <span className="font-bold bg-slate-100 px-2 py-1 rounded text-xs">CGPA: 7.6/10</span>
+
+          {/* Class 12 */}
+          <div className="mb-4">
+             <div className="flex justify-between items-start mb-1">
+              <h3 className="font-bold text-lg">St. Paul School, MP Board</h3>
+              <span className="font-bold text-slate-500 text-sm whitespace-nowrap">2022 – 2023</span>
+            </div>
+            <div className="flex justify-between items-center">
+               <p className="font-semibold italic text-slate-800">Higher Secondary (Class 12)</p>
+               <span className="font-bold bg-slate-100 px-2 py-1 rounded text-xs">77%</span>
+            </div>
           </div>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            <span className="font-bold">Relevant Coursework:</span> Data Structure & Algorithm, Database Management System, Computer Networks, Operating System, Computer Organization & Architecture
-          </p>
+
+          {/* Class 10 */}
+          <div>
+            <div className="flex justify-between items-start mb-1">
+              <h3 className="font-bold text-lg">St. Paul School, MP Board</h3>
+              <span className="font-bold text-slate-500 text-sm whitespace-nowrap">2020 – 2021</span>
+            </div>
+            <div className="flex justify-between items-center">
+               <p className="font-semibold italic text-slate-800">High School (Class 10)</p>
+               <span className="font-bold bg-slate-100 px-2 py-1 rounded text-xs">76%</span>
+            </div>
+          </div>
+
         </section>
 
         {/* Skills */}

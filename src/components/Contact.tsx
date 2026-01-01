@@ -1,9 +1,35 @@
 "use client";
 
+import { useState } from "react";
+
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Instagram } from "lucide-react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, company, email, phone, message } = formData;
+    
+    // Construct WhatsApp Message
+    const text = `*New Portfolio Inquiry*%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+    
+    const whatsappUrl = `https://wa.me/917828059933?text=${text}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="contact" className="py-10 md:py-24 relative z-10 px-2 md:px-6">
       <div className="max-w-4xl mx-auto">
@@ -28,36 +54,52 @@ export default function Contact() {
                 </h2>
             </div>
 
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                 <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-4">Your Name*</label>
-                    <input type="text" placeholder="Enter your name" className="w-full bg-slate-50 dark:bg-transparent border-b border-slate-300 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white focus:border-violet-500 focus:outline-none transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-600" />
+                    <input required name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Enter your name" className="w-full bg-slate-50 dark:bg-transparent border-b border-slate-300 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white focus:border-violet-500 focus:outline-none transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-600" />
                 </div>
                  <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-4">Company Name</label>
-                    <input type="text" placeholder="Enter company name" className="w-full bg-slate-50 dark:bg-transparent border-b border-slate-300 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white focus:border-violet-500 focus:outline-none transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-600" />
+                    <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Enter company name" className="w-full bg-slate-50 dark:bg-transparent border-b border-slate-300 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white focus:border-violet-500 focus:outline-none transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-600" />
                 </div>
                  <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-4">Email Address*</label>
-                    <input type="email" placeholder="Enter your email" className="w-full bg-slate-50 dark:bg-transparent border-b border-slate-300 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white focus:border-violet-500 focus:outline-none transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-600" />
+                    <input required name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Enter your email" className="w-full bg-slate-50 dark:bg-transparent border-b border-slate-300 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white focus:border-violet-500 focus:outline-none transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-600" />
                 </div>
                  <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-4">Phone Number*</label>
-                    <input type="tel" placeholder="Enter phone number" className="w-full bg-slate-50 dark:bg-transparent border-b border-slate-300 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white focus:border-violet-500 focus:outline-none transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-600" />
+                    <input required name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="Enter phone number" className="w-full bg-slate-50 dark:bg-transparent border-b border-slate-300 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white focus:border-violet-500 focus:outline-none transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-600" />
                 </div>
                  <div className="col-span-1 md:col-span-2 space-y-2">
                     <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-4">A Few Words*</label>
-                    <textarea placeholder="Tell us about your project" rows={4} className="w-full bg-slate-50 dark:bg-transparent border-b border-slate-300 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white focus:border-violet-500 focus:outline-none transition-colors resize-none placeholder:text-slate-400 dark:placeholder:text-slate-600"></textarea>
+                    <textarea required name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your project" rows={4} className="w-full bg-slate-50 dark:bg-transparent border-b border-slate-300 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white focus:border-violet-500 focus:outline-none transition-colors resize-none placeholder:text-slate-400 dark:placeholder:text-slate-600"></textarea>
                 </div>
                 
                  <div className="col-span-1 md:col-span-2 mt-4">
-                    <button className="w-full py-4 rounded-[2rem] bg-violet-600 text-white font-bold text-lg tracking-wide shadow-lg shadow-violet-600/20 hover:bg-violet-700 transition-all hover:-translate-y-1">
+                    <button type="submit" className="w-full py-4 rounded-[2rem] bg-violet-600 text-white font-bold text-lg tracking-wide shadow-lg shadow-violet-600/20 hover:bg-violet-700 transition-all hover:-translate-y-1">
                         Send Message
                     </button>
                 </div>
             </form>
 
-            <div className="mt-14 pt-8 border-t border-black/5 dark:border-white/10 flex justify-between items-center flex-wrap gap-4">
+            {/* Footer Info Grid - Location, Phone, Email */}
+            <div className="mt-14 pt-10 border-t border-black/5 dark:border-white/10 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">Location</h4>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm">Indore, MP India</p>
+                </div>
+                <div>
+                    <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">Phone</h4>
+                    <a href="tel:+917828059933" className="text-slate-600 dark:text-slate-400 text-sm hover:text-violet-500 transition-colors">+91 78280 59933</a>
+                </div>
+                <div>
+                    <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">Email</h4>
+                    <a href="mailto:raghuthakur0217@gmail.com" className="text-slate-600 dark:text-slate-400 text-sm hover:text-violet-500 transition-colors break-all">raghuthakur0217@gmail.com</a>
+                </div>
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-black/5 dark:border-white/10 flex justify-between items-center flex-wrap gap-4">
                 <p className="text-slate-600 dark:text-slate-500 text-sm font-medium">
                     © {new Date().getFullYear()} Raghvendra Bhati.
                 </p>

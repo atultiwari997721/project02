@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
+import Certificates from "@/components/Certificates";
 
 export default function Home() {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
               <section id="experience">
                 <Experience />
               </section>
+              <Certificates />
               <section id="contact">
                 <Contact />
               </section>
