@@ -2,7 +2,36 @@
 
 import { motion } from "framer-motion";
 
-const experiences = [
+import PopIn from "@/components/anim/PopIn";
+
+const education = [
+    {
+        id: 1,
+        date: "2021 - 2025",
+        title: "Bachelors Of Technology",
+        institution: "Computer Science & Engineering at IPS Academy, Indore",
+        description: "Pursuing B.Tech with a focus on Data Science and AI. Active member of E-Cell and various technical clubs.",
+        color: "bg-violet-500",
+    },
+    {
+        id: 2,
+        date: "2020 - 2021",
+        title: "Class 12th",
+        institution: "MP Board",
+        description: "Completed Higher Secondary Education with a focus on Physics, Chemistry, and Mathematics.",
+        color: "bg-blue-500",
+    },
+     {
+        id: 3,
+        date: "2018 - 2019",
+        title: "Class 10th",
+        institution: "MP Board",
+        description: "Completed Secondary School Education with excellent academic performance.",
+        color: "bg-pink-500",
+    },
+];
+
+const workExperience = [
   {
     id: 1,
     role: "Social Media Manager",
@@ -21,60 +50,75 @@ const experiences = [
       "Organizing creative events and workshops, fostering a culture of innovation across the campus.",
     color: "bg-purple-500",
   },
-  {
-    id: 3,
-    role: "NEC Finalist",
-    company: "National Entrepreneurship Challenge '24",
-    date: "2024",
-    description:
-      "Competed and secured a finalist position in a prestigious national-level entrepreneurship challenge at IIT Bombay.",
-    color: "bg-pink-500",
-  },
 ];
 
 export default function Experience() {
   return (
-    <section id="work" className="py-20 relative z-10 px-6">
+    <section id="experience" className="py-10 md:py-20 relative z-10 px-2 md:px-6">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-sm font-bold text-violet-600 uppercase tracking-widest mb-2">
-            My Journey
+        <PopIn>
+        {/* Header Section */}
+        <div className="mb-12 md:mb-20">
+          <span className="inline-block py-1 px-3 rounded-full bg-slate-100 dark:bg-white/5 border border-black/5 dark:border-white/10 text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-4">
+            ✨ Resume
+          </span>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white font-syne leading-tight mb-8">
+            Education and <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-600 dark:from-pink-300 dark:to-violet-300">
+              practical experience
+            </span>
           </h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-slate-800">Work Experience</h3>
-        </motion.div>
-
-        <div className="relative border-l-2 border-slate-300 ml-4 md:ml-10 space-y-12">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.id}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="relative pl-8 md:pl-12"
-            >
-              {/* Dot */}
-              <div
-                className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 border-slate-200 ${exp.color} ring-4 ring-white`}
-              ></div>
-
-              <div className="bg-white p-8 rounded-3xl hover:shadow-xl transition-all shadow-sm border border-white">
-                <span className="text-sm text-slate-400 block mb-2 font-semibold tracking-wide">{exp.date}</span>
-                <h4 className="text-xl font-bold text-slate-800 mb-1">{exp.role}</h4>
-                <p className="text-violet-600 font-semibold mb-3">{exp.company}</p>
-                <p className="text-slate-600 leading-relaxed text-sm md:text-base font-medium">
-                  {exp.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-3xl font-medium border-l-4 border-violet-500 pl-6 italic">
+            "Education is like a never-ending game of 'Did I know that?'— where you're always one step ahead, just enough to seem like you knew it all along, even if you only remembered it five minutes ago!"
+          </p>
         </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24">
+            
+            {/* Education Column */}
+            <div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-violet-500/10 dark:bg-violet-500/20 flex items-center justify-center text-violet-600 dark:text-violet-400 text-sm">01</span>
+                    My Education
+                </h3>
+                <div className="space-y-12 relative border-l border-slate-200 dark:border-white/10 ml-3">
+                     {education.map((item, index) => (
+                        <div key={item.id} className="relative pl-8 md:pl-12">
+                            <span className={`absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full ${item.color} ring-4 ring-white dark:ring-[#0a0a0d]`}></span>
+                            <div className="group">
+                                <span className="text-sm font-bold text-slate-500 mb-2 block tracking-widest">{item.date}</span>
+                                <h4 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors font-syne">{item.title}</h4>
+                                <p className="text-slate-700 dark:text-slate-300 font-semibold text-sm mb-4">{item.institution}</p>
+                                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                            </div>
+                        </div>
+                     ))}
+                </div>
+            </div>
+
+            {/* Work Experience Column */}
+            <div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-pink-500/10 dark:bg-pink-500/20 flex items-center justify-center text-pink-600 dark:text-pink-400 text-sm">02</span>
+                    Work Experience
+                </h3>
+                <div className="space-y-12 relative border-l border-slate-200 dark:border-white/10 ml-3">
+                     {workExperience.map((item, index) => (
+                        <div key={item.id} className="relative pl-8 md:pl-12">
+                            <span className={`absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full ${item.color} ring-4 ring-white dark:ring-[#0a0a0d]`}></span>
+                            <div className="group">
+                                <span className="text-sm font-bold text-slate-500 mb-2 block tracking-widest">{item.date}</span>
+                                <h4 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors font-syne">{item.role}</h4>
+                                <p className="text-slate-700 dark:text-slate-300 font-semibold text-sm mb-4">{item.company}</p>
+                                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                            </div>
+                        </div>
+                     ))}
+                </div>
+            </div>
+
+        </div>
+        </PopIn>
       </div>
     </section>
   );

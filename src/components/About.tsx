@@ -2,60 +2,107 @@
 
 import { motion } from "framer-motion";
 
+import PopIn from "@/components/anim/PopIn";
+
 export default function About() {
   return (
-    <section id="about" className="py-20 relative z-10 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-sm font-bold text-violet-600 uppercase tracking-widest mb-2">
-            About Me
-          </h2>
-          <h3 className="text-3xl md:text-5xl font-bold mb-6 text-slate-800">
-            A Data Science Enthusiast & Creative Leader
-          </h3>
-          <p className="text-slate-600 text-lg leading-relaxed mb-6 font-medium">
-            I am currently a Data Science student at <span className="text-violet-600 font-bold">IPS Academy, Indore</span>. My journey involves deep diving into data analytics while simultaneously nurturing my creative side as a Social Media Manager.
-          </p>
-          <p className="text-slate-600 text-lg leading-relaxed font-medium">
-            I also lead initiatives at <span className="text-violet-600 font-bold">E-Cell IIT Bombay</span>, where I manage social media strategies and contribute to the entrepreneurship ecosystem. I thrive at the intersection of technology, data, and community building.
-          </p>
-        </motion.div>
+    <section id="about" className="pt-10 pb-0 md:py-20 relative z-10 px-0 md:px-6">
+      <div className="max-w-6xl mx-auto">
+        <PopIn>
+        {/* Stats Row - Updated to match user request */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 md:mb-16">
+             <StatCard number="50+" label="Certifications" />
+             <StatCard number="1+" label="Year of Experience" />
+             <StatCard number="10+" label="Projects Done" />
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative bg-white rounded-[40px] p-8 border border-white shadow-xl"
-        >
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-violet-400/30 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-400/30 rounded-full blur-3xl"></div>
-            
-            <dl className="grid grid-cols-2 gap-6 relative z-10">
-                <div className="bg-slate-50 p-6 rounded-3xl text-center hover:bg-violet-50 transition-colors">
-                    <dt className="text-3xl font-bold text-violet-600 mb-1">2+</dt>
-                    <dd className="text-sm text-slate-500 font-semibold">Years Experience</dd>
+        {/* Content Layout - Split: Bio Text (Left) & Contact Details (Right) */}
+        <div className="glass-card rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 border border-black/5 dark:border-white/10 relative overflow-hidden backdrop-blur-xl bg-white/60 dark:bg-[#0a0a0a]/60">
+             
+             {/* Header */}
+             <div className="mb-8 md:mb-10">
+                <span className="inline-block py-1 px-3 rounded-full bg-slate-100 dark:bg-white/5 border border-black/5 dark:border-white/10 text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-4">
+                    🧐 About Me
+                </span>
+                <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white font-syne leading-tight break-words">
+                    Detailed <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600 dark:from-violet-400 dark:to-indigo-400">Overview</span>
+                </h2>
+             </div>
+
+
+             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+                
+                {/* Left Column: Bio Text */}
+                <div className="md:col-span-2 space-y-6 md:space-y-8">
+                    <h2 className="text-sm font-bold text-violet-600 dark:text-violet-400 uppercase tracking-widest mb-4">Biography</h2>
+                    <div className="space-y-6 text-slate-700 dark:text-slate-300 text-base md:text-lg leading-relaxed font-medium text-left md:text-justify hyphens-auto">
+                        <p>
+                            Being an <span className="text-slate-900 dark:text-white font-bold">Undergrad Student</span> at <span className="text-slate-900 dark:text-white">Medicaps University</span>, I am currently exploring the field of <span className="text-slate-900 dark:text-white">Data Science</span> and <span className="text-slate-900 dark:text-white">Artificial Intelligence</span>.
+                        </p> 
+                        <p>
+                            I have always been fascinated by the idea of how machines can learn and make decisions. This curiosity led me to explore the field of <span className="text-violet-600 dark:text-violet-300">Machine Learning</span> and <span className="text-violet-600 dark:text-violet-300">Deep Learning</span>.
+                        </p>
+                        <p>
+                            I am a quick learner and always ready to learn new technologies. I strongly believe in the power of consistency and hard work.
+                        </p>
+                    </div>
+
+                    <div className="pt-4">
+                        <a 
+                            href="/resume.pdf" 
+                            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-pink-300 to-violet-300 text-black font-bold text-lg shadow-lg hover:shadow-violet-500/20 hover:-translate-y-1 transition-all"
+                            download
+                        >
+                            Download CV 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                        </a>
+                    </div>
                 </div>
-                <div className="bg-slate-50 p-6 rounded-3xl text-center hover:bg-blue-50 transition-colors">
-                    <dt className="text-3xl font-bold text-blue-600 mb-1">50+</dt>
-                    <dd className="text-sm text-slate-500 font-semibold">Projects Managed</dd>
+
+                {/* Right Column: Contact Details Grid */}
+                <div className="grid grid-cols-1 gap-8 lg:pl-8 lg:border-l border-black/5 dark:border-white/10">
+                    
+                    <div>
+                        <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2">Name</p>
+                        <p className="text-2xl text-slate-900 dark:text-white font-bold font-syne">Raghvendra Bhati</p>
+                    </div>
+
+                    <div>
+                        <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2">Phone</p>
+                        <p className="text-xl text-slate-900 dark:text-white font-bold tracking-wide">+91 78280 59933</p>
+                    </div>
+
+                    <div>
+                        <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2">Email</p>
+                        <a href="mailto:raghuthakur0217@gmail.com" className="text-xl text-slate-900 dark:text-white font-bold hover:text-violet-600 dark:hover:text-violet-400 transition-colors break-all">
+                            raghuthakur0217@gmail.com
+                        </a>
+                    </div>
+
+                    <div>
+                        <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2">Location</p>
+                        <p className="text-xl text-slate-900 dark:text-white font-bold">Indore, MP India</p>
+                    </div>
+
                 </div>
-                <div className="bg-slate-50 p-6 rounded-3xl text-center hover:bg-pink-50 transition-colors">
-                    <dt className="text-3xl font-bold text-pink-600 mb-1">10k+</dt>
-                    <dd className="text-sm text-slate-500 font-semibold">Reach Generated</dd>
-                </div>
-                <div className="bg-slate-50 p-6 rounded-3xl text-center hover:bg-emerald-50 transition-colors">
-                    <dt className="text-3xl font-bold text-emerald-600 mb-1">100%</dt>
-                    <dd className="text-sm text-slate-500 font-semibold">Dedication</dd>
-                </div>
-            </dl>
-        </motion.div>
+
+             </div>
+        </div>
+        </PopIn>
       </div>
     </section>
+  );
+}
+
+function StatCard({ number, label }: { number: string, label: string }) {
+  return (
+    <div className="glass-card p-8 rounded-[2rem] text-center hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group border border-black/5 dark:border-white/10">
+      <h3 className="text-5xl font-extrabold text-slate-900 dark:text-white mb-2 font-syne group-hover:scale-110 transition-transform duration-300">
+        {number}
+      </h3>
+      <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest text-sm">
+        {label}
+      </p>
+    </div>
   );
 }
