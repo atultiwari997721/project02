@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import Scene from "./canvas/Scene";
 import ParticleWave from "./canvas/ParticleWave";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
