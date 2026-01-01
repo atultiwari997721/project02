@@ -31,10 +31,10 @@ export default function About() {
              </div>
 
 
-             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                 
                 {/* Left Column: Bio Text */}
-                <div className="md:col-span-2 space-y-6 md:space-y-8">
+                <div className="lg:col-span-2 space-y-6 md:space-y-8">
                     <h2 className="text-sm font-bold text-violet-600 dark:text-violet-400 uppercase tracking-widest mb-4">Biography</h2>
                     <div className="space-y-6 text-slate-700 dark:text-slate-300 text-base md:text-lg leading-relaxed font-medium text-left md:text-justify hyphens-auto">
                         <p>
@@ -69,7 +69,7 @@ export default function About() {
 
                     <div>
                         <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2">Phone</p>
-                        <p className="text-xl text-slate-900 dark:text-white font-bold tracking-wide">+91 78280 59933</p>
+                        <p className="text-xl text-slate-900 dark:text-white font-bold tracking-wide">+91 7828059933</p>
                     </div>
 
                     <div>

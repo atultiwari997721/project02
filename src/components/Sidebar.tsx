@@ -50,7 +50,7 @@ export default function Sidebar() {
           <div className="flex gap-4">
              <SocialLink href="https://linkedin.com" icon={<Linkedin size={20} />} />
              <SocialLink href="https://github.com" icon={<Github size={20} />} />
-             <SocialLink href="mailto:raghavendrabhati@gmail.com" icon={<Mail size={20} />} />
+             <SocialLink href="mailto:raghuthakur0217@gmail.com" icon={<Mail size={20} />} />
           </div>
           
           <a 
