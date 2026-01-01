@@ -28,8 +28,8 @@ export default function Home() {
           </div>
 
           {/* Right Column: Scrollable Content */}
-          <div className="lg:col-span-9 xl:col-span-9 flex flex-col gap-16 md:gap-24 pb-20">
-              <section id="home" className="min-h-[85vh] flex flex-col justify-center pt-4 lg:pt-0">
+          <div className="lg:col-span-9 xl:col-span-9 flex flex-col gap-0 pb-20">
+              <section id="home" className="flex flex-col justify-center pt-4 lg:pt-0">
                 <Hero />
               </section>
               <Projects />

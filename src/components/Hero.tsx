@@ -11,7 +11,7 @@ export default function Hero() {
   const rotate = useTransform(scrollY, [0, 1000], [0, 360]);
 
   return (
-    <section id="home" className="relative w-full min-h-screen flex items-center justify-center py-10 px-0 md:px-8 overflow-hidden">
+    <section id="home" className="relative w-full py-16 pt-24 md:py-32 px-4 md:px-8 overflow-hidden">
       {/* 3D Background Layer */}
       <div className="absolute inset-0 z-0 opacity-20 dark:opacity-20 opacity-5 mix-blend-multiply dark:mix-blend-normal">
          <Scene>
@@ -19,7 +19,7 @@ export default function Hero() {
          </Scene>
       </div>
 
-      <div className="max-w-[1400px] w-full grid grid-cols-1 gap-8 relative z-10 mt-10">
+      <div className="max-w-[1400px] w-full grid grid-cols-1 gap-8 relative z-10">
 
 
         {/* Main Hero Content */}
@@ -46,13 +46,13 @@ export default function Hero() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap gap-6 items-center justify-center lg:justify-start mb-16 relative z-10">
+            <div className="flex flex-wrap gap-6 items-center justify-center lg:justify-start mb-8 relative z-10">
                 <a href="#projects" className="group px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold text-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-all shadow-xl shadow-slate-900/10 dark:shadow-white/5 hover:-translate-y-1 flex items-center gap-3">
                     My Works <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </a>
-                <a href="/resume.pdf" className="px-8 py-4 bg-transparent text-slate-900 dark:text-white rounded-full font-bold text-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all shadow-md border border-black/10 dark:border-white/20 hover:-translate-y-1 flex items-center gap-3">
-                    Download CV <span className="text-xl">↓</span>
-                </a>
+                <Link href="/resume" className="px-8 py-4 bg-transparent text-slate-900 dark:text-white rounded-full font-bold text-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all shadow-md border border-black/10 dark:border-white/20 hover:-translate-y-1 flex items-center gap-3">
+                    View CV <span className="text-xl">↗</span>
+                </Link>
             </div>
 
             {/* Scroll Indicator - Bottom Right */}

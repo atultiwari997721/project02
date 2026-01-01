@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 import PopIn from "@/components/anim/PopIn";
 
@@ -48,14 +49,13 @@ export default function About() {
                     </div>
 
                     <div className="pt-4">
-                        <a 
-                            href="/resume.pdf" 
+                        <Link 
+                            href="/resume" 
                             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-pink-300 to-violet-300 text-black font-bold text-lg shadow-lg hover:shadow-violet-500/20 hover:-translate-y-1 transition-all"
-                            download
                         >
-                            Download CV 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                        </a>
+                            View CV 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                        </Link>
                     </div>
                 </div>
 
