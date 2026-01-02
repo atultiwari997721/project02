@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -47,15 +48,17 @@ export default function Hero() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap gap-6 items-center justify-center lg:justify-start mb-8 relative z-10">
-                <a href="#projects" className="group px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold text-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-all shadow-xl shadow-slate-900/10 dark:shadow-white/5 hover:-translate-y-1 flex items-center gap-3">
-                    My Works <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-                <Link href="/resume" className="px-8 py-4 bg-transparent text-slate-900 dark:text-white rounded-full font-bold text-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all shadow-md border border-black/10 dark:border-white/20 hover:-translate-y-1 flex items-center gap-3">
-                    View CV <span className="text-xl">↗</span>
-                </Link>
+            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center lg:justify-start mb-8 relative z-10 w-full sm:w-auto">
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <a href="#projects" className="group px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold text-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-all shadow-xl shadow-slate-900/10 dark:shadow-white/5 hover:-translate-y-1 flex items-center gap-3">
+                        My Works <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                    <Link href="/resume" className="px-8 py-4 bg-transparent text-slate-900 dark:text-white rounded-full font-bold text-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all shadow-md border border-black/10 dark:border-white/20 hover:-translate-y-1 flex items-center gap-3">
+                        View CV <span className="text-xl">↗</span>
+                    </Link>
+                </div>
             </div>
-
+            
             {/* Scroll Indicator - Bottom Right */}
             <div className="absolute right-0 bottom-10 hidden lg:flex items-center justify-center">
                  <div className="relative w-32 h-32 flex items-center justify-center">

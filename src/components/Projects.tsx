@@ -3,43 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { PROJECTS, Project } from "@/constants/projects";
 
-const PROJECTS = [
-  {
-    category: "Web Dev",
-    title: "Front-End",
-    image: "/assets/thumb_front_end_cottage.png",
-    description: "Building responsive, pixel-perfect web experiences using modern frameworks.",
-    tags: ["HTML/CSS", "React", "Next.js"],
-    accent: "from-orange-400 to-pink-500",
-  },
-  {
-    category: "Artificial Intelligence",
-    title: "Machine Learning",
-    image: "/assets/thumb_ai_ml_abstract.png",
-    description: "Developing intelligent models and data-driven solutions for complex problems.",
-    tags: ["Python", "TensorFlow", "PyTorch"],
-    accent: "from-violet-500 to-purple-600",
-  },
-  {
-    category: "Python",
-    title: "Algorithms",
-    image: "/assets/thumb_python_3d.png",
-    description: "Optimizing code efficiency and solving algorithmic challenges.",
-    tags: ["Data Structures", "Optimization", "Scripting"],
-    accent: "from-blue-400 to-cyan-500",
-  },
-  {
-    category: "Data Science",
-    title: "Visualization",
-    image: "/assets/thumb_visualization.jpg",
-    description: "Transforming raw data into meaningful insights and visual stories.",
-    tags: ["Pandas", "Matplotlib", "Tableau"],
-    accent: "from-emerald-400 to-teal-500",
-  },
-];
+interface ProjectsProps {
+    onProjectClick?: (project: Project) => void;
+}
 
-export default function Projects() {
+export default function Projects({ onProjectClick }: ProjectsProps) {
   return (
     <section id="projects" className="py-4 md:py-10 relative z-10 px-2 md:px-6">
       <div className="max-w-7xl mx-auto">
@@ -74,6 +44,7 @@ export default function Projects() {
                 damping: 15,
                 delay: index * 0.1 
               }}
+              onClick={() => onProjectClick?.(project)}
               className={`group relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden aspect-square cursor-pointer bg-gradient-to-br ${project.accent} p-[1px]`}
             >
               <div className="absolute inset-[1px] rounded-[2rem] md:rounded-[2.5rem] bg-[#0f0f11]">

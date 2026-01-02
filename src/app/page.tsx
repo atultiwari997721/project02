@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "@/components/Hero";
 import Sidebar from "@/components/Sidebar";
 import Projects from "@/components/Projects";
@@ -6,10 +8,25 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Certificates from "@/components/Certificates";
+import { useState } from "react";
+import { Project, PROJECTS } from "@/constants/projects";
+import ProjectModal from "@/components/ProjectModal";
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const handleOpenProject = (project: Project) => {
+    setSelectedProject(project);
+  };
+
+  const handleCloseProject = () => {
+    setSelectedProject(null);
+  };
+
   return (
     <main className="w-full max-w-[100vw] min-h-screen bg-white dark:bg-[#0a0a0d] text-slate-900 dark:text-white transition-colors duration-300">
+      <ProjectModal project={selectedProject} onClose={handleCloseProject} />
+
       {/* 3D Background Wrapper - Fixed behind everything */}
       <div className="fixed inset-0 z-0 opacity-20 pointer-events-none">
           {/* Note: If ParticleWave is expensive, consider only rendering it on desktop or simplifying */}
@@ -33,7 +50,7 @@ export default function Home() {
               <section id="home" className="flex flex-col justify-center pt-4 lg:pt-0">
                 <Hero />
               </section>
-              <Projects />
+              <Projects onProjectClick={handleOpenProject} />
               <section id="about">
                 <About />
               </section>
