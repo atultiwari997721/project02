@@ -16,7 +16,7 @@ const PROJECTS = [
   {
     category: "Artificial Intelligence",
     title: "Machine Learning",
-    image: "/assets/thumb_ai_login.png",
+    image: "/assets/thumb_ai_ml_abstract.png",
     description: "Developing intelligent models and data-driven solutions for complex problems.",
     tags: ["Python", "TensorFlow", "PyTorch"],
     accent: "from-violet-500 to-purple-600",

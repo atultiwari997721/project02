@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-syne: var(--font-syne);
-  --font-sans: var(--font-sans);
+  --font-syne: var(--font-outfit);
+  --font-sans: var(--font-inter);
 }
 
 /* Custom Base Styles */
@@ -70,4 +70,18 @@ body {
   .animate-spin-slow {
     animation: spin-slow 10s linear infinite;
   }
+}
+
+/* Hide Navbar when Modal is Open */
+body.modal-open nav {
+  display: none !important;
+}
+
+/* Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

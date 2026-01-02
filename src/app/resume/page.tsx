@@ -9,13 +9,14 @@ export default function ResumePage() {
       <div className="max-w-[800px] w-full bg-white text-slate-900 shadow-2xl p-8 md:p-12 rounded-sm relative">
         
         {/* Print/Download Button (Floating) */}
-        <div className="absolute top-4 right-4 print:hidden flex gap-2">
-            <Link href="/" className="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-md font-bold text-sm transition-colors">
+        {/* Print/Download Button (Top Bar) */}
+        <div className="w-full flex justify-end gap-3 mb-6 print:hidden">
+            <Link href="/" className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-md font-bold text-sm transition-colors border border-slate-300">
                 Back to Home
             </Link>
             <button 
                 onClick={() => window.print()} 
-                className="px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-md font-bold text-sm flex items-center gap-2 transition-colors"
+                className="px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-md font-bold text-sm flex items-center gap-2 transition-colors shadow-lg shadow-violet-500/20"
             >
                 <Download size={16} /> Save as PDF
             </button>

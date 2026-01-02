@@ -64,24 +64,24 @@ export default function About() {
                     
                     <div>
                         <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2">Name</p>
-                        <p className="text-2xl text-slate-900 dark:text-white font-bold font-syne">Raghvendra Bhati</p>
+                        <p className="text-xl text-slate-900 dark:text-white font-bold font-syne">Raghvendra Bhati</p>
                     </div>
 
                     <div>
                         <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2">Phone</p>
-                        <p className="text-xl text-slate-900 dark:text-white font-bold tracking-wide">+91 7828059933</p>
+                        <p className="text-base text-slate-900 dark:text-white font-bold tracking-wide">+91 7828059933</p>
                     </div>
 
                     <div>
                         <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2">Email</p>
-                        <a href="mailto:raghuthakur0217@gmail.com" className="text-xl text-slate-900 dark:text-white font-bold hover:text-violet-600 dark:hover:text-violet-400 transition-colors break-all">
+                        <a href="mailto:raghuthakur0217@gmail.com" className="text-base text-slate-900 dark:text-white font-bold hover:text-violet-600 dark:hover:text-violet-400 transition-colors break-all">
                             raghuthakur0217@gmail.com
                         </a>
                     </div>
 
                     <div>
                         <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2">Location</p>
-                        <p className="text-xl text-slate-900 dark:text-white font-bold">Indore, MP India</p>
+                        <p className="text-base text-slate-900 dark:text-white font-bold">Indore, MP India</p>
                     </div>
 
                 </div>
