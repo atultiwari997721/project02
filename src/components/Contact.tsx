@@ -104,10 +104,10 @@ export default function Contact() {
                     © {new Date().getFullYear()} Raghvendra Bhati.
                 </p>
                 <div className="flex gap-4">
-                     <SocialIcon Icon={Mail} />
-                     <SocialIcon Icon={Linkedin} />
-                     <SocialIcon Icon={Github} />
-                     <SocialIcon Icon={Instagram} />
+                     <SocialIcon href="mailto:raghuthakur0217@gmail.com" Icon={Mail} />
+                     <SocialIcon href="https://www.linkedin.com/in/raghvendrabhati0217/" Icon={Linkedin} />
+                     <SocialIcon href="https://github.com" Icon={Github} />
+                     <SocialIcon href="#" Icon={Instagram} />
                 </div>
             </div>
         </motion.div>
@@ -116,9 +116,9 @@ export default function Contact() {
   );
 }
 
-function SocialIcon({ Icon }: { Icon: any }) {
+function SocialIcon({ Icon, href }: { Icon: any, href: string }) {
     return (
-        <a href="#" className="w-10 h-10 bg-slate-100 dark:bg-white/5 rounded-full flex items-center justify-center hover:bg-slate-200 dark:hover:bg-white/10 transition-colors text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-black/5 dark:border-white/10">
+        <a href={href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-100 dark:bg-white/5 rounded-full flex items-center justify-center hover:bg-slate-200 dark:hover:bg-white/10 transition-colors text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-black/5 dark:border-white/10">
             <Icon size={18} />
         </a>
     )

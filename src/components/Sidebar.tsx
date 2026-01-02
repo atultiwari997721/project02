@@ -48,7 +48,7 @@ export default function Sidebar() {
       {/* Social Actions */}
       <div className="mt-auto flex flex-col gap-4">
           <div className="flex gap-4">
-             <SocialLink href="https://linkedin.com" icon={<Linkedin size={20} />} />
+             <SocialLink href="https://www.linkedin.com/in/raghvendrabhati0217/" icon={<Linkedin size={20} />} />
              <SocialLink href="https://github.com" icon={<Github size={20} />} />
              <SocialLink href="mailto:raghuthakur0217@gmail.com" icon={<Mail size={20} />} />
           </div>
