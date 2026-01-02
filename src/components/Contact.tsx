@@ -22,12 +22,19 @@ export default function Contact() {
     e.preventDefault();
     const { name, company, email, phone, message } = formData;
     
-    // Construct WhatsApp Message
-    const text = `*New Portfolio Inquiry*%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+    // Construct Email Message
+    const subject = `New Portfolio Inquiry from ${name}`;
+    const body = `Name: ${name}
+Company: ${company}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}`;
+
+    const mailtoUrl = `mailto:raghuthakur0217@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
-    const whatsappUrl = `https://wa.me/917828059933?text=${text}`;
-    
-    window.open(whatsappUrl, '_blank');
+    window.location.href = mailtoUrl;
   };
 
   return (
