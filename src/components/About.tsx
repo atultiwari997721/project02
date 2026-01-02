@@ -38,7 +38,7 @@ export default function About() {
                     <h2 className="text-sm font-bold text-violet-600 dark:text-violet-400 uppercase tracking-widest mb-4">Biography</h2>
                     <div className="space-y-6 text-slate-700 dark:text-slate-300 text-base md:text-lg leading-relaxed font-medium text-justify hyphens-auto">
                         <p>
-                            Being an <span className="text-slate-900 dark:text-white font-bold">Undergrad Student</span> at <span className="text-slate-900 dark:text-white">Medicaps University</span>, I am currently exploring the field of <span className="text-slate-900 dark:text-white">Data Science</span> and <span className="text-slate-900 dark:text-white">Artificial Intelligence</span>.
+                            Being an <span className="text-slate-900 dark:text-white font-bold">Undergrad Student</span> at <span className="text-slate-900 dark:text-white">IPS Academy</span>, I am currently exploring the field of <span className="text-slate-900 dark:text-white">Data Science</span> and <span className="text-slate-900 dark:text-white">Artificial Intelligence</span>.
                         </p> 
                         <p>
                             I have always been fascinated by the idea of how machines can learn and make decisions. This curiosity led me to explore the field of <span className="text-violet-600 dark:text-violet-300">Machine Learning</span> and <span className="text-violet-600 dark:text-violet-300">Deep Learning</span>.
